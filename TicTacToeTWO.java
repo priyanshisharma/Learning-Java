@@ -78,36 +78,36 @@ public class TicTacToeTWO {
     }
     static char checkWinner()
     {
-        for(int i=0; i<9; i++)
+
+        if((board[0]==board[1])&&(board[0]==board[2]))
         {
-
-            String line=null;
-            switch (i)
-            {
-                case 0 :  line =  new StringBuilder().append(board[0]).append(board[1]).append(board[2]).toString();
-                            break;
-                case 1 :  line = new StringBuilder().append(board[1]).append(board[4]).append(board[7]).toString();
-                            break;
-                case 2 :  line = new StringBuilder().append(board[2]).append(board[5]).append(board[8]).toString();
-                            break;
-                case 3 :  line = new StringBuilder().append(board[0]).append(board[3]).append(board[6]).toString();
-                            break;
-                case 4  : line = new StringBuilder().append(board[4]).append(board[6]).append(board[2]).toString();
-                            break;
-                case 5 :  line = new StringBuilder().append(board[5]).append(board[3]).append(board[4]).toString();
-                            break;
-                case 6 :  line = new StringBuilder().append(board[6]).append(board[7]).append(board[8]).toString();
-                            break;
-                case 8 :  line = new StringBuilder().append(board[8]).append(board[0]).append(board[4]).toString();
-                            break;
-                default:   line = null;
-            }
-            if (line!=null&&line.equals("XXX"))
-                return 'X';
-            else if(line!=null&&line.equals("OOO"))
-                return 'O';
-
+            return board[0];
         }
+        else if((board[2]==board[5])&&(board[5]==board[8]))
+        {
+            return board[2];
+        }
+        else if((board[0]==board[3])&&(board[3]==board[6]))
+        {
+            return board[0];
+        }
+        else if((board[4]==board[6])&&(board[6]==board[2]))
+        {
+            return board[4];
+        }
+        else if((board[3]==board[5])&&(board[5]==board[4]))
+        {
+            return board[3];
+        }
+        else if((board[6]==board[7])&&(board[7]==board[8]))
+        {
+            return board[6];
+        }
+        else if((board[8]==board[0])&&(board[0]==board[4]))
+        {
+            return board[8];
+        }
+
         for(char i='0';i<'9';i++)
         {
             if(board[i-'0']==i+1)
